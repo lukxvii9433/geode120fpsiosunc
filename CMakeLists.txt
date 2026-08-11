@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.25)
+project(FPS120Mod)
+
 set(CMAKE_CXX_STANDARD 20)
 
-project(FPS120Mod)
+if(DEFINED ENV{GEODE_SDK})
+    list(APPEND CMAKE_PREFIX_PATH "$ENV{GEODE_SDK}")
+endif()
 
 find_package(Geode REQUIRED)
 
